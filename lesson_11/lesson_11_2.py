@@ -4,7 +4,7 @@ import csv
 
 
 def phone_number():
-    number = None
+    number = ""
     if random.randint(0, 3):
         operators = ['095', '066', '098', '096', '050', '097']
         number = random.choice(operators)
@@ -27,10 +27,7 @@ def main():
             for elem in data[key]:
                 line.append(elem)
 
-            number = phone_number()
-            if number:
-                line.append(number)
-
+            line.append(phone_number())
             file.writerow(line)
 
 
